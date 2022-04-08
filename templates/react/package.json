@@ -1,0 +1,131 @@
+{
+  "name": "@minicdn/vitejs-template-react",
+  "version": "1.0.0",
+  "keywords": [],
+  "description": "",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky install",
+    "start:dev": "vite",
+    "start": "npm run build && serve dist",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --fix --quiet  --ignore-path .gitignore",
+    "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
+    "lint:style": "stylelint src/**/*.{css,less,scss} --fix "
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint",
+      "prettier --write"
+    ],
+    "*.{less,scss}": "prettier --write",
+    "*.{js,css,json,md}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {},
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": [
+    "defaults",
+    "not ie < 8",
+    "last 2 versions",
+    "> 1%",
+    "iOS 7",
+    "last 3 iOS versions"
+  ],
+  "dependencies": {
+    "@arco-design/web-react": "^2.36.0",
+    "@rematch/core": "^2.2.0",
+    "@rematch/immer": "^2.1.3",
+    "@rematch/loading": "^2.1.2",
+    "@rematch/persist": "^2.1.2",
+    "@rematch/select": "^3.1.2",
+    "@rematch/updated": "^2.1.2",
+    "axios": "^0.27.2",
+    "classnames": "^2.3.1",
+    "dayjs": "^1.11.3",
+    "delay": "^5.0.0",
+    "dotenv": "^16.0.1",
+    "dotenv-expand": "^8.0.3",
+    "formik": "^2.2.9",
+    "immer": "^9.0.15",
+    "js-cookie": "^3.0.1",
+    "lodash": "^4.17.21",
+    "path-to-regexp": "^6.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-icons": "^4.4.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
+    "react-use": "^17.4.0",
+    "redux": "^4.2.0",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "serve": "^13.0.2",
+    "validator": "^13.7.0",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@minicdn/vitejs-plugins-interpolate-html": "^1.0.1",
+    "@testing-library/dom": "^8.14.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^14.2.1",
+    "@types/jest": "^28.1.3",
+    "@types/js-cookie": "^3.0.2",
+    "@types/lodash": "^4.14.182",
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
+    "@types/react-helmet": "^6.1.5",
+    "@types/redux-logger": "^3.0.9",
+    "@types/validator": "^13.7.3",
+    "@vitejs/plugin-legacy": "^1.8.2",
+    "@vitejs/plugin-react": "^1.3.2",
+    "@vitejs/plugin-react-refresh": "^1.3.6",
+    "autoprefixer": "^10.4.7",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.18.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "postcss": "^8.4.14",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-import": "^14.1.0",
+    "postcss-preset-env": "^7.7.2",
+    "prettier": "^2.7.1",
+    "sass": "^1.53.0",
+    "tailwindcss": "^3.1.4",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4",
+    "vite": "^2.9.12",
+    "vite-plugin-imp": "^2.2.0"
+  },
+  "license": "ISC"
+}

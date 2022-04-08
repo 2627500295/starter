@@ -1,0 +1,129 @@
+{
+  "name": "@starter/vue",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "prepare": "husky install",
+    "start": "vite --host 0.0.0.0",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview --port 4173",
+    "lint": "run-p lint:*",
+    "lint:fix": "eslint ./src --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --quiet  --ignore-path .gitignore",
+    "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
+    "lint:style": "stylelint src/**/*.{css,less,scss} --fix",
+    "test:unit": "vitest --environment jsdom",
+    "test:e2e": "start-server-and-test preview http://127.0.0.1:4173/ 'cypress open --e2e'",
+    "test:e2e:ci": "start-server-and-test preview http://127.0.0.1:4173/ 'cypress run --e2e'"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint",
+      "prettier --write"
+    ],
+    "*.{less,scss}": "prettier --write",
+    "*.{js,css,json,md}": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {},
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended",
+      "@vue/eslint-config-typescript/recommended",
+      "@vue/eslint-config-prettier"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "cypress/e2e/**.{cy,spec}.{js,ts,jsx,tsx}"
+        ],
+        "extends": [
+          "plugin:cypress/recommended"
+        ]
+      }
+    ]
+  },
+  "browserslist": [
+    "defaults",
+    "not ie < 8",
+    "last 2 versions",
+    "> 1%",
+    "iOS 7",
+    "last 3 iOS versions"
+  ],
+  "dependencies": {
+    "element-plus": "^2.2.9",
+    "pinia": "^2.0.16",
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.2",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@minicdn/vitejs-plugins-interpolate-html": "^1.0.1",
+    "@rushstack/eslint-patch": "^1.1.0",
+    "@types/jest": "^28.1.5",
+    "@types/js-cookie": "^3.0.2",
+    "@types/jsdom": "^16.2.14",
+    "@types/lodash": "^4.14.182",
+    "@types/node": "^18.0.4",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@types/react-helmet": "^6.1.5",
+    "@types/redux-logger": "^3.0.9",
+    "@types/validator": "^13.7.4",
+    "@vitejs/plugin-legacy": "^2.0.0",
+    "@vitejs/plugin-vue": "^3.0.0",
+    "@vitejs/plugin-vue-jsx": "^2.0.0",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-typescript": "^11.0.0",
+    "@vue/test-utils": "^2.0.2",
+    "@vue/tsconfig": "^0.1.3",
+    "autoprefixer": "^10.4.7",
+    "commitizen": "^4.2.4",
+    "cypress": "^10.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-vue": "^9.0.0",
+    "husky": "^8.0.1",
+    "jsdom": "^20.0.0",
+    "lint-staged": "^13.0.3",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.14",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-import": "^14.1.0",
+    "postcss-preset-env": "^7.7.2",
+    "prettier": "^2.7.1",
+    "sass": "^1.53.0",
+    "start-server-and-test": "^1.14.0",
+    "stylelint": "^14.9.1",
+    "tailwindcss": "^3.1.6",
+    "terser": "^5.14.2",
+    "typescript": "^4.7.4",
+    "vite": "^3.0.0",
+    "vite-plugin-imp": "^2.2.0",
+    "vitest": "^0.18.0",
+    "vue-tsc": "^0.38.5"
+  },
+  "license": "MIT"
+}

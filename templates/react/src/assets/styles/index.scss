@@ -1,0 +1,158 @@
+/**
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins.
+ */
+@tailwind base;
+
+/**
+  * This injects Tailwind's component classes and any component classes
+  * registered by plugins.
+  */
+@tailwind components;
+
+/**
+  * This injects Tailwind's utility classes and any utility classes registered
+  * by plugins.
+  */
+@tailwind utilities;
+
+/**
+  * Use this directive to control where Tailwind injects the hover, focus,
+  * responsive, dark mode, and other variants of each class.
+  *
+  * If omitted, Tailwind will append these classes to the very end of
+  * your stylesheet by default.
+  */
+@tailwind variants;
+
+/**
+  * Base Styles
+  */
+@layer base {
+  html {
+    /**
+     * Root Font Size
+     *
+     * @remarks
+     *
+     * Browser default font size: 16px
+     *
+     * For mobile adaptation, please set the root font size to 10vw.
+     *
+     * Assuming the width of the design draft is 750 pixels, the root font is 75 pixels.
+     *
+     * Need to set the `rootValue` of `postcss-plugin-px2rem` to 75.
+     *
+     * @example
+     *
+     * ```
+     * // @filename: index.css
+     * font-size: 10vw;
+     *
+     * // @filename: postcss.config.js
+     * {
+     *   plugins: {
+     *     "postcss-plugin-px2rem": {
+     *       rootValue: {
+     *         px: 75
+     *       }
+     *     }
+     *   }
+     * }
+     * ```
+     */
+    font-size: 16px;
+    line-height: 2;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "PingFang SC",
+      "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue",
+      Helvetica, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    @apply subpixel-antialiased;
+  }
+
+  body {
+    @apply m-0 bg-slate-50;
+  }
+
+  body,
+  html,
+  #root {
+    @apply w-screen h-screen;
+  }
+}
+
+/**
+  * Custom Utilities
+  */
+@layer utilities {
+  /**
+   * 24 删格
+   */
+  .w-1\/24 { width: 4.166667% }
+  .w-2\/24 { width: 8.333333% }
+  .w-3\/24 { width: 12.5% }
+  .w-4\/24 { width: 16.666667% }
+  .w-5\/24 { width: 20.833333% }
+  .w-6\/24 { width: 25% }
+  .w-7\/24 { width: 29.166667% }
+  .w-8\/24 { width: 33.333333% }
+  .w-9\/24 { width: 37.5% }
+  .w-10\/24 { width: 41.666667% }
+  .w-11\/24 { width: 45.833333% }
+  .w-12\/24 { width: 50% }
+  .w-13\/24 { width: 54.166667% }
+  .w-14\/24 { width: 58.333333% }
+  .w-15\/24 { width: 62.5% }
+  .w-16\/24 { width: 66.666667% }
+  .w-17\/24 { width: 70.833333% }
+  .w-18\/24 { width: 75% }
+  .w-19\/24 { width: 79.166667% }
+  .w-20\/24 { width: 83.333333% }
+  .w-21\/24 { width: 87.5% }
+  .w-22\/24 { width: 91.666667% }
+  .w-23\/24 { width: 95.833333% }
+
+  /**
+   * List Style Type
+   */
+  .list-none	               { list-style-type: none;}
+  .list-disc	               { list-style-type: disc;}
+  .list-decimal	             { list-style-type: decimal;}
+  .list-circle               { list-style-type: circle;}
+  .list-square               { list-style-type: square;}
+  .list-georgian             { list-style-type: georgian;}
+  .list-decimal-leading-zero { list-style-type: decimal-leading-zero; }
+  .list-lower-roman          { list-style-type: lower-roman; }
+  .list-upper-roman          { list-style-type: upper-roman; }
+  .list-lower-greek          { list-style-type: lower-greek; }
+  .list-lower-latin          { list-style-type: lower-latin; }
+  .list-upper-latin          { list-style-type: upper-latin; }
+  .list-armenian             { list-style-type: armenian; }
+  .list-georgian             { list-style-type: georgian; }
+  .list-lower-alpha          { list-style-type: lower-alpha; }
+  .list-upper-alpha          { list-style-type: upper-alpha; }
+  .list-none                 { list-style-type: none; }
+  .list-inside               { list-style-position: inside; }
+  .list-outside              { list-style-position: outside; }
+
+  /**
+   * Word Break
+   */
+  .break-keep-all { word-break: keep-all; }
+
+  /**
+   * Content
+   */
+  .content-blank { content: ""; }
+}
+
+/**
+  * Component Classes
+  */
+@layer components {
+  .clearfix {
+    &::after {
+      @apply block content-blank clear-both;
+    }
+  }
+}

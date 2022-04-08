@@ -1,0 +1,111 @@
+{
+  "name": "bun-nextjs-unocss-starter",
+  "version": "0.0.125",
+  "module": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "eslintConfig": {
+    "$schema": "https://json.schemastore.org/eslintrc.json",
+    "extends": [
+      "next/core-web-vitals",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "import",
+      "@typescript-eslint",
+      "prettier"
+    ],
+    "rules": {
+      "@typescript-eslint/consistent-type-imports": [
+        "error",
+        {
+          "prefer": "type-imports"
+        }
+      ],
+      "arrow-body-style": [
+        "error",
+        "as-needed"
+      ],
+      "react/self-closing-comp": [
+        "error",
+        {
+          "component": true,
+          "html": true
+        }
+      ],
+      "import/order": [
+        "warn",
+        {
+          "groups": [
+            "builtin",
+            "external",
+            "internal",
+            [
+              "parent",
+              "sibling"
+            ],
+            "index",
+            "unknown"
+          ],
+          "pathGroups": [
+            {
+              "pattern": "{react,next,{@,}umi}**",
+              "group": "external",
+              "position": "before"
+            },
+            {
+              "pattern": "@/**",
+              "group": "internal",
+              "position": "after"
+            }
+          ],
+          "pathGroupsExcludedImportTypes": [
+            "next",
+            "react",
+            "umi"
+          ],
+          "newlines-between": "always",
+          "alphabetize": {
+            "order": "asc",
+            "caseInsensitive": true
+          }
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "next.config.js"
+  ],
+  "dependencies": {
+    "next": "^13.1.6",
+    "ramda": "^0.28.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-is": "^18.2.0",
+    "semver": "^7.3.8"
+  },
+  "devDependencies": {
+    "@types/node": "18.13.0",
+    "@types/ramda": "^0.28.23",
+    "@types/react": "^18.0.28",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "@unocss/preset-uno": "^0.49.4",
+    "@unocss/webpack": "^0.49.4",
+    "@unocss/preset-web-fonts": "^0.49.4",
+    "bun-framework-next": "^12.2.5",
+    "eslint": "^8.34.0",
+    "eslint-config-next": "^13.1.6",
+    "eslint-plugin-prettier": "^4.2.1",
+    "react-refresh": "^0.14.0",
+    "typescript": "^4.9.5",
+    "unocss": "^0.49.4"
+  },
+  "license": "MIT"
+}
