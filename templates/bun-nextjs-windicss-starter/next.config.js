@@ -18,9 +18,16 @@ const ReactVersion = parseVersion(reactPackage.version);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  /** Destination directory */
   distDir: "build",
+
+  /** React Strict Mode */
+  reactStrictMode: true,
+
+  /** Disabling x-powered-by */
   poweredByHeader: false,
+
+  /** TypeScript Config */
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete even if
@@ -28,6 +35,8 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+
+  /** Environment Variables */
   env: {
     STAGE: "testing",
     LAST_MODIFIED: Date.now(),
@@ -35,6 +44,11 @@ const nextConfig = {
     APP_VERSION: appPackage.version,
     APP_FRAMEWORK: `Next.js/${NextVersion} React/${ReactVersion}`,
     COMMIT: git.long(),
+  },
+
+  /** @param {import('webpack').Configuration} config */
+  webpack(config) {
+    return config;
   },
 };
 
