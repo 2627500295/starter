@@ -1,5 +1,10 @@
-/* main.css */
-@windicss;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @windicss; */
+
+/* @unocss; */
 
 html {
 }

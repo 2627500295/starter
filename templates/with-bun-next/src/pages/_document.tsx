@@ -1,17 +1,27 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
+import {
+  APP_NAME,
+  APP_VERSION,
+  APP_FRAMEWORK,
+  STAGE,
+  NODE_ENV,
+  LAST_MODIFIED,
+  COMMIT,
+} from "../constants/env";
+
 class WebsiteDocument extends Document {
   public override render() {
     return (
       <Html
-        lang="zh-CN"
-        data-app-name={process.env.APP_NAME}
-        data-app-version={process.env.APP_VERSION}
-        data-app-framework={process.env.APP_FRAMEWORK}
-        data-stage={process.env.STAGE}
-        data-node-env={process.env.NODE_ENV}
-        data-last-modified={process.env.LAST_MODIFIED}
-        data-commit-id={process.env.COMMIT}
+        lang="zh-Hans-CN"
+        data-app-name={APP_NAME}
+        data-app-version={APP_VERSION}
+        data-app-framework={APP_FRAMEWORK}
+        data-stage={STAGE}
+        data-node-env={NODE_ENV}
+        data-last-modified={LAST_MODIFIED}
+        data-commit-id={COMMIT}
         className="no-js"
       >
         <Head>
@@ -22,14 +32,9 @@ class WebsiteDocument extends Document {
               __html: `const documentElement = document.documentElement; documentElement.classList.remove('no-js'); documentElement.classList.add("js");`,
             }}
           />
-
-          {/* <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width, viewport-fit=cover"
-          /> */}
         </Head>
 
-        <body>
+        <body className="m-0">
           <Main />
 
           <NextScript />

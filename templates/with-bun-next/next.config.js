@@ -1,14 +1,21 @@
-const git = require("git-rev-sync");
+/* eslint-disable @typescript-eslint/no-var-requires */
+
+// const git = require("git-rev-sync");
+const execSync = (command, options) => require("child_process").execSync(command, options);
+const long = () => execSync("git rev-parse HEAD", { encoding: "utf-8" });
+const date = () => execSync("git log -1 --pretty='%cD'", { encoding: "utf-8" });
+
 const { valid, coerce } = require("semver");
-
-const { version: APP_VERSION, name: APP_NAME } = require("./package.json");
-
 const parseVersion = (version) => valid(coerce(version));
 
+const appPackage = require("./package.json");
+
+const APP_NAME = appPackage.name;
+const APP_VERSION = parseVersion(appPackage.version);
 const NextVersion = parseVersion(require("next/package.json").version);
 const ReactVersion = parseVersion(require("react/package.json").version);
-const COMMIT = git.long();
-const LAST_MODIFIED = new Date(git.date()).toISOString();
+const COMMIT = long();
+const LAST_MODIFIED = new Date(date()).toISOString();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -25,7 +32,5 @@ const nextConfig = {
     COMMIT,
   },
 };
-
-module.exports = nextConfig;
 
 module.exports = nextConfig;
