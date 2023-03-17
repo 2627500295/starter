@@ -11,7 +11,7 @@ export default function Home() {
       </Head>
 
       <main className="">
-        <div className="text-black">Next.js 13 + PostCSS + UnoCSS</div>
+        <div className="text-red">Next.js 13 + PostCSS + UnoCSS</div>
       </main>
     </>
   );

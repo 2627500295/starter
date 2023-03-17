@@ -21,7 +21,7 @@ export default function Home({}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="text-red m-3">
         <div>App Name: {process.env.APP_NAME}</div>
         <div>App Version: {process.env.APP_VERSION}</div>
         <div>App Framework: {process.env.APP_FRAMEWORK}</div>
