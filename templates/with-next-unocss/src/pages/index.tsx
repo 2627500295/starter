@@ -1,5 +1,4 @@
-import Head from 'next/head'
-
+import Head from 'next/head';
 
 export default function Home() {
   return (
@@ -12,8 +11,8 @@ export default function Home() {
       </Head>
 
       <main className="">
-        <div className='text-blue text-cyan text-emerald text-fuchsia'>Next.js 13 + PostCSS + UnoCSS</div>
+        <div className="text-black">Next.js 13 + PostCSS + UnoCSS</div>
       </main>
     </>
-  )
+  );
 }

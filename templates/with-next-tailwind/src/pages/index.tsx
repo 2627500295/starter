@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from "next/head";
 
 function Home() {
   return (
@@ -11,10 +11,10 @@ function Home() {
       </Head>
 
       <main className="">
-        <div className='font-bold text-base'>Next.js</div>
+        <div className="text-black">Next.js</div>
       </main>
     </>
-  )
+  );
 }
 
 export default Home;
