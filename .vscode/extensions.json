@@ -3,7 +3,15 @@
   // for the documentation about the extensions.json format
   "recommendations": [
     "dbaeumer.vscode-eslint",
-    "EditorConfig.EditorConfig",
-    "antfu.unocss"
+    "editorconfig.editorconfig",
+    "antfu.unocss",
+    "richie5um2.vscode-sort-json",
+    "bradlc.vscode-tailwindcss",
+    "wayou.vscode-todo-highlight",
+    "streetsidesoftware.code-spell-checker",
+    "mikestead.dotenv",
+    "csstools.postcss",
+    "esbenp.prettier-vscode",
+    "wangzy.sneak-mark"
   ]
 }

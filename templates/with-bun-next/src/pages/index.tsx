@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-export default function Home({}) {
+export default function Home(props: any) {
   return (
     <div className="container m-0 h-screen p-2 sm:p-0 flex justify-center items-center flex-col">
       <Head>
@@ -9,7 +9,7 @@ export default function Home({}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="text-red m-3" />
+      <main className="text-red m-3">Home</main>
     </div>
   );
 }

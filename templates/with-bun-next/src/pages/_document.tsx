@@ -36,7 +36,6 @@ class WebsiteDocument extends Document {
 
         <body className="m-0">
           <Main />
-
           <NextScript />
         </body>
       </Html>
