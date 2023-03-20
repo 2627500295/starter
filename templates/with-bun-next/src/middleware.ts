@@ -20,13 +20,14 @@ export const config = {
   ],
 };
 
+function localePathMiddleware(req: NextRequest) {
+  const lang = req.cookies.get("NEXT_LOCALE")?.value || "en";
+  req.nextUrl.pathname = `/${lang}${req.nextUrl.pathname}`;
+}
+
 export default function middleware(req: NextRequest) {
   // rewrite /.* to /lang/.*
-  if (process.env.__NEXT_I18N_SUPPORT) {
-    const { pathname } = req.nextUrl;
-    const lang = req.cookies.get("NEXT_LOCALE")?.value || "en";
-    req.nextUrl.pathname = `/${lang}${pathname}`;
-  }
+  if (process.env.__NEXT_I18N_SUPPORT) localePathMiddleware(req);
 
   return NextResponse.rewrite(req.nextUrl);
 }
