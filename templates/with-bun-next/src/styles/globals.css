@@ -1,6 +1,11 @@
+/**
+ * Use Tailwind CSS 
+ * see https://tailwindcss.com/docs/functions-and-directives#tailwind 
+ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
 
 /* @windicss; */
 
